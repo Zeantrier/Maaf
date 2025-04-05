@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>jadi gimana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: pink;
+      height: 100vh;
+      width: 100vw;
+      font-family: "Ubuntu", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    @media (min-width: 769px) {
+      body::before {
+        content: "Buka di handphone ya!";
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        padding: 20px;
+      }
+      * {
+        display: none !important;
+      }
+    }
+
+    .gif-container img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .iya-container {
+      margin-top: 20px;
+      z-index: 1;
+    }
+
+    #iyaBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #tidakBtn {
+      position: absolute;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #f44336;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gif-container">
+    <img src="Maaf.gif" alt="Animasi Lucu">
+  </div>
+
+  <h2>jadi gimana di maafin nggak?</h2>
+
+  <div class="iya-container">
+    <button id="iyaBtn" onclick="window.location.href='Wa.html'">iya sayangg</button>
+  </div>
+
+  <button id="tidakBtn" style="top: 70%; left: 50%;">nggak mau</button>
+
+  <script>
+    const tidakBtn = document.getElementById('tidakBtn');
+
+    tidakBtn.addEventListener('mouseover', () => {
+      const maxX = window.innerWidth - tidakBtn.offsetWidth;
+      const maxY = window.innerHeight - tidakBtn.offsetHeight;
+      const randX = Math.random() * maxX;
+      const randY = Math.random() * maxY;
+      tidakBtn.style.left = `${randX}px`;
+      tidakBtn.style.top = `${randY}px`;
+    });
+
+    tidakBtn.addEventListener('touchstart', () => {
+      const maxX = window.innerWidth - tidakBtn.offsetWidth;
+      const maxY = window.innerHeight - tidakBtn.offsetHeight;
+      const randX = Math.random() * maxX;
+      const randY = Math.random() * maxY;
+      tidakBtn.style.left = `${randX}px`;
+      tidakBtn.style.top = `${randY}px`;
+    });
+  </script>
+
+</body>
+</html>
